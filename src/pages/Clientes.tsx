@@ -1,16 +1,10 @@
 import { useNavigation } from "@react-navigation/native";
 import {SafeAreaView, Text, TextInput, View, Image, Button, StyleSheet} from "react-native";
 
-export default function HomeScreen(){
+export default function ClientesScreen(){
 
     const navegar = useNavigation();
 
-    function goClientes(){
-        navegar.navigate("Clientes");
-    }
-    function goProdutos(){
-        navegar.navigate("Produtos");
-    }
     function goSobre(){
         navegar.navigate("Sobre");
     }
@@ -18,34 +12,37 @@ export default function HomeScreen(){
         <SafeAreaView style={styles.container}>
             <View style={styles.logoContainer}>
                 <Image source={require('../../assets/rocket.png')} />
-                <Text style={styles.titulo}>SisFim</Text>
+                <Text style={styles.titulo}>Clientes</Text>
             </View>
             <View style={styles.buttonContainer}>
-                    <Button title="Cobranças" onPress={goSobre} />
+                    <Button title="Novo" onPress={goSobre} />
             </View>
             <View style={styles.buttonContainer}>
-                    <Button title="Vendas" onPress={goSobre} />
+                    <Button title="Busca" onPress={goSobre} />
             </View>
             <View style={styles.buttonContainer}>
-                    <Button title="Clientes" onPress={goClientes} />
+                    <Button title="Listar Ativos" onPress={goSobre} />
             </View>
             <View style={styles.buttonContainer}>
-                    <Button title="Produtos" onPress={goProdutos} />
+                    <Button title="Listar Inativos" onPress={goSobre} />
             </View>
             <View style={styles.buttonContainer}>
-                    <Button title="Despesas" onPress={goSobre} />
+                    <Button title="Listar Inadimplentes" onPress={goSobre} />
             </View>
-            <View style={styles.buttonContainer}>
-                    <Button title="Relatórios" onPress={goSobre} />
-            </View>
-            <View style={styles.buttonContainer}>
-                    <Button title="Sobre" onPress={goSobre} />
+            <View style={styles.texto}>
+                <Text>
+                    Criado por Germano Heckler
+                </Text>
             </View>
         </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
+    texto: {
+        marginTop: 15,
+        alignItems: 'center',
+    },
     container: {
         flex: 1,
         justifyContent: 'center',
